@@ -4,45 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script type="application/javascript" src="./js/lab-02.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
 
-    <title>multiple</title>
+    <link rel="stylesheet" href="./css/material-symbols.css" />
+    <link rel="stylesheet" href="./css/dom.css" />
+
+    <script type="module" src="./js/lab-02.js"></script>
+
+    <title>Lab</title>
   </head>
   <body>
-    <button type="button" class="app-cmd-add-section">Section</button>
+    <div style="text-align: center; margin-bottom: 2rem">
+      <button
+        type="button"
+        class="app-cl-btn app-cl-primary app-cmd-add-section"
+      >
+        <i class="material-symbols-outlined">note_stack_add</i>
+        Section
+      </button>
+    </div>
 
-    <div class="app-cmp-section-list">
-      <template class="app-tmp-section-component">
-        <div class="app-cmp-section">
-          <div class="app-cmp-section-header">
-            <h2 class="app-title-section">
-              Section <span class="app-title-section-number"></span>
-            </h2>
-            <button type="button" class="app-cmd-remove-section">X</button>
-          </div>
+    <main class="app-cmp-main-container"></main>
 
-          <button type="button" class="app-cmd-add-number-input">
-            + Input
+    <template class="app-tmp-section">
+      <article class="app-cmp-section">
+        <header>
+          <button
+            type="button"
+            class="app-cl-btn app-cl-primary app-cmd-add-number-input"
+          >
+            <i class="material-symbols-outlined">add_2</i>
+            Input
           </button>
-          <div class="app-cmp-number-list">
+
+          <label style="font-size: 1.2rem"
+            ><b>Section <span class="app-title-section"></span></b
+          ></label>
+
+          <button
+            type="button"
+            class="app-cl-btn app-cl-warn app-cl-icon app-cmd-remove-section"
+          >
+            <i class="material-symbols-outlined">delete_forever</i>
+          </button>
+        </header>
+
+        <div class="app-cl-column-container">
+          <section class="app-cmp-number-list">
             <template class="app-tmp-number-component">
               <div class="app-cmp-number">
                 <label>
-                  <b>Number <span class="app-title-number"></span>::</b>
+                  <b>Number <span class="app-title-number"></span></b>
                   <input type="number" class="app-inp-number" value="0" />
                 </label>
-                <button type="button" class="app-cmd-remove-number-input">
-                  X
+                <button
+                  type="button"
+                  class="app-cl-btn app-cl-warn app-cl-icon app-cmd-remove-number-input"
+                >
+                  <i class="material-symbols-outlined">delete_forever</i>
                 </button>
               </div>
             </template>
-          </div>
-          <label>
-            <b>Result ::</b>
-            <output class="app-out-number">0</output>
-          </label>
+          </section>
+
+          <section>
+            <div class="app-cmp-number">
+              <label>
+                <b>Result</b>
+                <output class="app-cl-number app-out-number">0</output>
+              </label>
+            </div>
+          </section>
         </div>
-      </template>
-    </div>
+      </article>
+    </template>
   </body>
 </html>
